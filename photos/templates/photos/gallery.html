@@ -47,13 +47,13 @@
                 <div class= "col-md-4">
                     <div class="card my-2">
                         <img class="image-thumbnail" 
-                        src="https://media.istockphoto.com/photos/portrait-of-smiling-diverse-colleagues-pose-for-selfie-picture-id1300512246?b=1&k=20&m=1300512246&s=170667a&w=0&h=bFBj-52XI41HEQiJd34flsKhiRrWmxGa_lJtkh8UehU=" 
+                        src="{{photo.image.url}}"
                         alt="Card image cap">
 
                         <div class="card-body">
-                            <small>Category: Friends</small>
+                            <small>Category: {{photo.category.name}}</small>
                         </div>
-                        <a href="{% url 'photo' 5 %}" class= "btn btn-outline-dark btn-sm m-1">View</a>
+                        <a href="{% url 'photo' photo.id %}" class= "btn btn-outline-dark btn-sm m-1">View</a>
                       </div>
                 </div>
                 {% empty %}
