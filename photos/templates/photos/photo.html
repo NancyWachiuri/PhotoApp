@@ -17,8 +17,9 @@
                 <a href="{%url 'gallery' %}" class= "btn btn-dark my-3"> Go Back</a>
                 <div style="height: 90vh;">
 
-                    <img style= "max-width: 100%; max-height: 100%;" src='https://media.istockphoto.com/photos/portrait-of-smiling-diverse-colleagues-pose-for-selfie-picture-id1300512246?b=1&k=20&m=1300512246&s=170667a&w=0&h=bFBj-52XI41HEQiJd34flsKhiRrWmxGa_lJtkh8UehU='>
-                <p> Lorem ipsum</p>
+                    <img style= "max-width: 100%; max-height: 100%;" 
+                    src="{{photo.image.url}}">
+                    <p> {{photo.description}}</p>
                 </div>
 
 
