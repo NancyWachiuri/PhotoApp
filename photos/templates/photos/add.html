@@ -13,8 +13,10 @@
     <div class= "container">
     <div class = "row justify-content-center">
       <div class = " col-md-4">
-        <a href="{%url 'gallery' %}" class= "btn btn-dark my-3"> Go Back</a>
+        <a href="{% url 'gallery' %}" class= "btn btn-dark my-3"> Go Back</a>
           <div class= "card">
+
+            
             <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
 
@@ -36,7 +38,7 @@
 
                 <div class="form-group m-3">
                     <label> Create a new category </label>
-                    <input name = "category" type="text" placeholder="Enter a category" class="form-control">
+                    <input name = "category_new" type="text" placeholder="Create a new category" class="form-control">
                 </div>
 
 
@@ -48,6 +50,7 @@
                 <button type="submit" class= "btn btn-primary m-3"> Submit </button>
 
               </form>
+
 
           </div>
       </div>  
