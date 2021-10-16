@@ -17,7 +17,8 @@
 </style>
 
 </head>
-<body class = "m-5">
+<body class = "m-2">
+    {% include 'navbar.html' %}
     <div class="container">
         <div class= "row">
             <div class = "col-md-3">
@@ -39,10 +40,32 @@
 
 
                       
-                            <a href="{% url 'add' %}" class= "btn btn-block btn-dark btn-sm m-1">Add Photo</a>
+                            <!-- <a href="{% url 'add' %}" class= "btn btn-block btn-dark btn-sm m-1">Add Photo</a> -->
                     
                     </ul>
                   </div>
+
+
+                  <div class="card">
+                    <div class="card-header">
+                      Location
+                    </div>
+                    <ul class="list-group list-group-flush">
+
+
+                      {% for location in location %}
+                      <li class="list-group-item">
+                        <a href = "{% url 'location' location.id %}">{{location.name}}</a>
+                        </li>
+                      {% endfor %}
+
+
+                      
+                            <!-- <a href="{% url 'add' %}" class= "btn btn-block btn-dark btn-sm m-1">Add Photo</a> -->
+                    
+                    </ul>
+                  </div>
+
         </div>
         <div class = "col-md-9">
             <div class = "row">
@@ -56,6 +79,7 @@
 
                         <div class="card-body">
                             <small>Category: {{photo.category.name}}</small>
+
                         </div>
                         <a href="{% url 'photo' photo.id %}" class= "btn btn-outline-dark btn-sm m-1">View</a>
                       </div>
