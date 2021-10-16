@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Category, Photo
+from .models import Category, Photo, Location
 
 # Create your views here.
 
@@ -11,9 +11,11 @@ def gallery(request):
         photos = Photo.objects.filter(category__name=category)
 
     categories = Category.objects.all()
+    location = Location.objects.all()
 
 
-    context = {'categories':categories, 'photos': photos}
+
+    context = {'categories':categories, 'photos': photos, 'location': location}
     return render(request, 'photos/gallery.html',context)
 
 def viewPhoto(request, pk):
@@ -45,17 +47,24 @@ def addPhoto(request):
             return redirect('gallery')
 
     context = {'categories': categories}
-    return render(request, 'images/add.html', context)
+    return render(request, 'photos/add.html', context)
 
 def search_results(request):
 
-    if 'category' in request.GET and request.GET["image"]:
+    if 'image' in request.GET and request.GET["image"]:
          search_term = request.GET.get("image")
          searched_images = Photo.search_by_category(search_term)
          message = f"{search_term}"
 
-         return render(request, 'all-photos/search.html',{"message":message,"articles": searched_images})
+         return render(request, 'search.html',{"message":message,"images": searched_images})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-photos/search.html',{"message":message})
+        return render(request, 'search.html',{"message":message})
+
+def location(request, location_id):
+    images = Photo.objects.filter(location_id=location_id)
+    # get the location name
+    title = location
+    return render(request, 'location.html', {'images': images,'title': title})
+
