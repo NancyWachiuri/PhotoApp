@@ -1,0 +1,58 @@
+# NEWSAPI Application.
+
+
+Welcome to PhotoApp, A personal gallery application. Look around and feel free to contact us. We are happy to help ., {12th October 2021}
+
+### by Nancy Wachiuri
+
+## Project brief
+
+View different photos that interest you.
+Click on a single photo to expand it and also view the details of the photo.
+Search for different categories of photos. (ie. Travel, Food)
+Copy a link to the photo to share with my friends.
+View photos based on the location they were taken.   
+
+This project was generated with [PYTHON, DJANGO PROGRAMMING]( version 3.8.10)
+
+## Setup/Installation 
+
+ git clone https://github.com/NancyWachiuri/PhotoApp.git extract the file cd. Open the application on your favorite browser``
+
+
+# Technologies Used:
+asgiref==3.4.1
+dj-database-url==0.5.0
+Django==3.2.8
+django-heroku==0.3.1
+gunicorn==20.1.0
+Pillow==8.3.2
+psycopg2==2.9.1
+pytz==2021.3
+sqlparse==0.4.2
+whitenoise==5.3.0
+
+## Development server
+
+Run `python3 manage.py serve` for a dev server. Navigate to 'http://127.0.0.1:8000/'. The app will automatically reload if you change any of the source files.
+
+
+
+## Running unit tests
+
+Run `python3 test` to execute the unit tests
+
+## Running end-to-end tests
+
+Run `python3 e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+
+
+## Support and contact details
+
+nancywachiuri@gmail.com
+
+
+## License
+
+ MIT License
